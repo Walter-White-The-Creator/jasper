@@ -95,7 +95,7 @@ nav a:hover { background: #e52521; color: #fff; }
 
 /* Munt animatie */
 .coin {
-  position: absolute;
+  position: 80px;
   width: 48px;
   height: 48px;
   transform: translate(-50%, 0);
