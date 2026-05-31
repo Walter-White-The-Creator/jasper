@@ -1,9 +1,3 @@
-// ============================================
-// Super Mario - app.js
-// Klik op een blok -> munt verschijnt en valt weer weg.
-// ============================================
-"use strict";
-
 const blokInfo = [
   { naam: "Blok 1", punten: 1 },
   { naam: "Blok 2", punten: 1 },

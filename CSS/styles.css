@@ -5,7 +5,7 @@
 
 body {
   font-family: "Trebuchet MS", Arial, sans-serif;
-  background: #5c94fc url("../media/achtergrond.png") center/cover fixed;
+  background: #5c94fc url("../jasper/media/achtergrond.png") center/cover fixed;
   color: #1a1a1a;
   line-height: 1.5;
   min-height: 100vh;
@@ -50,7 +50,7 @@ main { flex: 1; padding: 24px; max-width: 1024px; margin: 0 auto; width: 100%; }
 .block-btn {
   width: 100px; 
   height: 100px;
-  background: #fbd000 url("../media/logo.png") center/contain no-repeat;
+  background: #fbd000 url("../jasper/media/logo.png") center/contain no-repeat;
   border: 4px solid #1a1a1a;
   cursor: pointer;
   background-size: 80%;
