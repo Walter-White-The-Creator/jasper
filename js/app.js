@@ -1,3 +1,7 @@
+// ============================================
+// Super Mario - app.js
+// Klik op een blok -> munt verschijnt en valt weer weg.
+// ============================================
 "use strict";
 
 const blokInfo = [
@@ -29,7 +33,7 @@ function spawnMunt(blokEl) {
 
   stage.appendChild(munt);
 
-  // Verwijder munt na animatie
+  // Verwijder munt na animatie (zorg dat animationend overeenkomt met CSS)
   munt.addEventListener("animationend", function () {
     munt.remove();
   });
