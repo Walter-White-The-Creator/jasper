@@ -4,23 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Super Mario - Spel</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
+
   <header>
-    <img src="../media/logo.png" alt="Super Mario logo" class="logo">
+    <img src="../media/logo.png" alt="logo" class="logo">
     <h1>Super Mario Wereld</h1>
   </header>
 
   <nav>
     <a href="../index.html">Home</a>
-    <a href="game.html">Spel</a>
+    <a href="../html/game.html">Spel</a>
   </nav>
 
-  <main>
-    <h2>Sla op de blokken!</h2>
-    <p>Klik op een ?-blok om een munt te laten verschijnen. Score: <span id="score">0</span></p>
-
+  <main class="game-main">
+    <p>Score: <span id="score">0</span></p>
     <div class="block-stage">
       <button type="button" class="block-btn" data-index="0" aria-label="Blok 1"></button>
       <button type="button" class="block-btn" data-index="1" aria-label="Blok 2"></button>
@@ -28,6 +27,14 @@
       <button type="button" class="block-btn" data-index="3" aria-label="Blok 4"></button>
     </div>
   </main>
+
+  <footer>
+    <table>
+      <tr><th>Naam</th><td>School Voorbeeld</td></tr>
+      <tr><th>Straat</th><td>Schoolstraat 1</td></tr>
+      <tr><th>Gemeente</th><td>1000 Brussel</td></tr>
+    </table>
+  </footer>
 
   <script src="../js/app.js"></script>
 </body>
