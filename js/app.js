@@ -1,4 +1,4 @@
-"use strict";
+
 
 const blokInfo = [
   { naam: "Blok 1", punten: 1 },
