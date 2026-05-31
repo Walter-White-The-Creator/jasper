@@ -7,6 +7,7 @@ body {
   font-family: "Trebuchet MS", Arial, sans-serif;
   background: #5c94fc url("../media/achtergrond.png") center/cover fixed;
   color: #1a1a1a;
+  line-height: 1.5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,10 +23,12 @@ header {
   border-bottom: 4px solid #1a1a1a;
 }
 .logo { width: 64px; height: 64px; object-fit: contain; }
+header h1 { font-size: 1.6rem; letter-spacing: 1px; }
 
 nav {
   background: #fbd000;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   padding: 12px 16px;
   border-bottom: 4px solid #1a1a1a;
@@ -50,6 +53,7 @@ main { flex: 1; padding: 24px; max-width: 1024px; margin: 0 auto; width: 100%; }
   background: #fbd000 url("../media/logo.png") center/contain no-repeat;
   border: 4px solid #1a1a1a;
   cursor: pointer;
+  background-size: 80%;
 }
 
 .coin { 
@@ -64,3 +68,22 @@ main { flex: 1; padding: 24px; max-width: 1024px; margin: 0 auto; width: 100%; }
   20% { transform: translate(-50%, -80px) scale(1); opacity: 1; }
   100% { transform: translate(-50%, -100px) scale(0.8); opacity: 0; }
 }
+
+#score {
+  display: inline-block;
+  background: #fbd000;
+  border: 2px solid #1a1a1a;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+footer { background: #1a1a1a; color: #fff; padding: 16px; margin-top: 24px; }
+footer table {
+  margin: 0 auto; border-collapse: collapse;
+  background: #fff; color: #1a1a1a;
+  border-radius: 6px; overflow: hidden;
+}
+footer caption { caption-side: top; color: #fff; padding-bottom: 5px; }
+footer th { background: #fbd000; padding: 8px 14px; border: 1px solid #ccc; }
+footer td { padding: 8px 14px; border: 1px solid #ccc; }
