@@ -71,6 +71,7 @@ nav a:hover { background: #e52521; color: #fff; }
 .block-stage {
   display: flex;
   gap: 0;
+  position: relative;
 }
 
 .block-btn {
