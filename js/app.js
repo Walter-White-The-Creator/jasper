@@ -1,63 +1,28 @@
 // ============================================
 // Super Mario - app.js
-// Klik op een blok -> munt verschijnt en valt weer weg.
-// Je kan oneindig vaak klikken.
+// Klik op een blok -> munt verschijnt
 // ============================================
 "use strict";
 
-const blokInfo = [
-  { naam: "Blok 1", punten: 1 },
-  { naam: "Blok 2", punten: 1 },
-  { naam: "Blok 3", punten: 1 }
-];
+let score = 0; // Houd de score bij
+const scoreVak = document.getElementById("score"); // Referentie naar score element
+const knoppen = document.querySelectorAll(".block-btn"); // Selecteer alle knoppen
 
-let score = 0;
+// Functie om een munt te tonen
+function spawnMunt(event) {
+  score++; // 1. Verhoog score
+  scoreVak.textContent = score; // 2. Update scherm
 
-function spawnMunt(blokEl) {
-  const stage = document.querySelector(".block-stage");
-  if (!stage) return;
+  const munt = document.createElement("img"); // 3. Maak element
+  munt.src = "../media/coin.gif"; // 4. Bron toevoegen
+  munt.className = "coin"; // 5. CSS klasse
+  munt.style.left = event.pageX + "px"; // 6. Positie X
+  munt.style.top = (event.pageY - 50) + "px"; // 7. Positie Y
+  
+  document.body.appendChild(munt); // 8. Voeg toe aan DOM
 
-  const stageRect = stage.getBoundingClientRect();
-  const blokRect = blokEl.getBoundingClientRect();
-  const x = blokRect.left - stageRect.left + blokRect.width / 2;
-  const y = blokRect.top - stageRect.top;
-
-  const munt = document.createElement("img");
-  munt.src = "../media/coin.png";
-  munt.alt = "munt";
-  munt.className = "coin";
-  munt.style.left = x + "px";
-  munt.style.top = y + "px";
-
-  stage.appendChild(munt);
-
-  munt.addEventListener("animationend", function () {
-    munt.remove();
-  });
+  setTimeout(() => munt.remove(), 1000); // 9. Verwijder na 1s
 }
 
-function bounceBlok(blokEl) {
-  blokEl.classList.remove("bounce");
-  void blokEl.offsetWidth;
-  blokEl.classList.add("bounce");
-}
-
-function blokGeklikt(event) {
-  const knop = event.currentTarget;
-  const index = Number(knop.dataset.index);
-  const info = blokInfo[index];
-
-  score += info.punten;
-  const scoreEl = document.getElementById("score");
-  if (scoreEl) scoreEl.textContent = String(score);
-
-  spawnMunt(knop);
-  bounceBlok(knop);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const knoppen = document.querySelectorAll(".block-btn");
-  knoppen.forEach(function (knop) {
-    knop.addEventListener("click", blokGeklikt);
-  });
-});
+// 10. Voeg event listeners toe aan alle knoppen
+knoppen.forEach(knop => knop.addEventListener("click", spawnMunt));
