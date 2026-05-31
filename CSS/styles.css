@@ -81,21 +81,22 @@ nav a:hover { background: #e52521; color: #fff; }
 .block-btn:last-child { border-right: 3px solid #000; }
 .block-btn:hover { filter: brightness(1.2); }
 
-/* Munt: positie via JS (left/top), animatie gaat omhoog en verdwijnt */
+
 .coin {
   position: absolute;
   width: 48px;
   height: 48px;
+  margin-left: -24px; /* horizontaal centreren zonder transform */
   pointer-events: none;
   image-rendering: pixelated;
   animation: muntPop 0.9s ease-out forwards;
 }
 
 @keyframes muntPop {
-  0%   { transform: translate(-50%, -100%); opacity: 1; }
-  40%  { transform: translate(-50%, -200%); opacity: 1; }
-  75%  { transform: translate(-50%, -210%); opacity: 1; }
-  100% { transform: translate(-50%, -130%); opacity: 0; }
+  0%   { transform: translateY(0);    opacity: 1; }
+  40%  { transform: translateY(-80px); opacity: 1; }
+  75%  { transform: translateY(-90px); opacity: 1; }
+  100% { transform: translateY(-20px); opacity: 0; }
 }
 
 main:not(.game-main) {

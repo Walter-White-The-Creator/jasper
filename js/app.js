@@ -14,16 +14,18 @@ function spawnMunt(blokEl) {
   if (!stage) return;
 
   const stageRect = stage.getBoundingClientRect();
-  const blokRect = blokEl.getBoundingClientRect();
+  const blokRect  = blokEl.getBoundingClientRect();
+
+  // Midden boven het blok: x = midden van blok, y = bovenkant van blok
   const x = blokRect.left - stageRect.left + blokRect.width / 2;
-  const y = blokRect.top - stageRect.top;
+  const y = blokRect.top  - stageRect.top  - 48; // 48px = hoogte van de munt, zodat hij start boven het blok
 
   const munt = document.createElement("img");
-  munt.src = "../media/coin.gif";
-  munt.alt = "munt";
+  munt.src       = "../media/coin.gif";
+  munt.alt       = "munt";
   munt.className = "coin";
   munt.style.left = x + "px";
-  munt.style.top = y + "px";
+  munt.style.top  = y + "px";
 
   stage.appendChild(munt);
 
