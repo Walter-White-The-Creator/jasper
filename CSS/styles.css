@@ -1,8 +1,6 @@
 /* ============================================
    Super Mario website - hoofdstylesheet
-   Auteur: Jasper - 5AD
    ============================================ */
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -13,9 +11,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
 }
-
 
 header {
   background: #e52521;
@@ -26,17 +22,8 @@ header {
   gap: 16px;
   border-bottom: 4px solid #1a1a1a;
 }
-
-.logo {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
-
-header h1 {
-  font-size: 1.6rem;
-  letter-spacing: 1px;
-}
+.logo { width: 64px; height: 64px; object-fit: contain; }
+header h1 { font-size: 1.6rem; letter-spacing: 1px; }
 
 nav {
   background: #fbd000;
@@ -46,7 +33,6 @@ nav {
   padding: 12px 16px;
   border-bottom: 4px solid #1a1a1a;
 }
-
 nav a {
   text-decoration: none;
   color: #1a1a1a;
@@ -56,7 +42,6 @@ nav a {
   border: 2px solid #1a1a1a;
   border-radius: 6px;
 }
-
 nav a:hover { background: #e52521; color: #fff; }
 
 main {
@@ -66,127 +51,98 @@ main {
   margin: 0 auto;
   width: 100%;
 }
-
 main h2 { margin-bottom: 12px; color: #fff; text-shadow: 2px 2px 0 #000; }
 main p { background: #fff; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
+.hero-img { display: block; max-width: 220px; margin: 16px auto; }
 
-.hero-img {
-  display: block;
-  max-width: 220px;
-  margin: 16px auto;
-}
-
-.cards {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr;
-  margin-top: 16px;
-}
-
+.cards { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 16px; }
 .cards article {
-  background: #fff;
-  padding: 16px;
-  border: 3px solid #1a1a1a;
-  border-radius: 10px;
+  background: #fff; padding: 16px;
+  border: 3px solid #1a1a1a; border-radius: 10px;
 }
 
-.game-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  border: 3px solid #1a1a1a;
-  display: grid;
-  gap: 10px;
-  max-width: 480px;
+/* Spel: blokken stage */
+.block-stage {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  aspect-ratio: 3 / 1;
 }
-
-.game-form label { font-weight: bold; }
-.game-form input[type="text"],
-.game-form select {
-  padding: 8px;
-  border: 2px solid #1a1a1a;
-  border-radius: 6px;
-  font-size: 1rem;
+.block-img {
+  width: 100%; height: 100%; display: block;
+  user-select: none; -webkit-user-drag: none;
 }
-
-.game-form .check { display: flex; align-items: center; gap: 8px; font-weight: normal; }
-
-#startBtn {
-  background: #43b047;
-  color: #fff;
-  border: 2px solid #1a1a1a;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 6px;
+.block-btn {
+  position: absolute;
+  width: 14%;
+  height: 38%;
+  top: 22%;
+  background: transparent;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  border-radius: 6px;
+}
+.block-btn[data-index="0"] { left: 9%; }
+.block-btn[data-index="1"] { left: 43%; }
+.block-btn[data-index="2"] { left: 77%; }
+.block-btn:focus-visible { outline: 3px dashed #fff; outline-offset: 2px; }
+
+.block-btn.bounce { animation: blokBounce 0.25s ease; }
+@keyframes blokBounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.coin {
+  position: absolute;
+  width: 48px; height: 48px;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  animation: muntPop 0.9s ease-out forwards;
+}
+@keyframes muntPop {
+  0%   { transform: translate(-50%, 0)     scale(0.6); opacity: 0; }
+  20%  { transform: translate(-50%, -80px) scale(1);   opacity: 1; }
+  60%  { transform: translate(-50%, -90px) scale(1);   opacity: 1; }
+  100% { transform: translate(-50%, 10px)  scale(0.8); opacity: 0; }
+}
+
+#score {
+  display: inline-block;
+  background: #fbd000;
+  border: 2px solid #1a1a1a;
+  padding: 2px 10px;
+  border-radius: 6px;
   font-weight: bold;
 }
 
-#startBtn:hover { background: #2e7d32; }
-
-.output {
-  margin-top: 20px;
-  background: #fff;
-  padding: 16px;
-  border: 3px dashed #1a1a1a;
-  border-radius: 10px;
-  min-height: 60px;
-}
-
-.error {
-  text-align: center;
-  background: #fff;
-  padding: 32px;
-  border-radius: 12px;
-  margin-top: 32px;
-}
-
+.error { text-align: center; background: #fff; padding: 32px; border-radius: 12px; margin-top: 32px; }
 .error h2 { color: #e52521; margin-bottom: 12px; }
 
-footer {
-  background: #1a1a1a;
-  color: #fff;
-  padding: 16px;
-  margin-top: 24px;
-}
-
+footer { background: #1a1a1a; color: #fff; padding: 16px; margin-top: 24px; }
 footer table {
-  margin: 0 auto;
-  border-collapse: collapse;
-  background: #fff;
-  color: #1a1a1a;
-  border-radius: 6px;
-  overflow: hidden;
+  margin: 0 auto; border-collapse: collapse;
+  background: #fff; color: #1a1a1a;
+  border-radius: 6px; overflow: hidden;
 }
-
-footer caption {
-  caption-side: top;
-  color: #fff;
-  font-weight: bold;
-  padding: 8px;
-}
-
-footer th, footer td {
-  padding: 8px 14px;
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
+footer caption { caption-side: top; color: #fff; font-weight: bold; padding: 8px; }
+footer th, footer td { padding: 8px 14px; border: 1px solid #ccc; text-align: left; }
 footer th { background: #fbd000; }
 
-/* Responsive design */
+/* Responsive */
 @media (max-width: 480px) {
   header { flex-direction: column; text-align: center; }
   header h1 { font-size: 1.2rem; }
   nav { justify-content: center; }
   .cards { grid-template-columns: 1fr; }
 }
-
 @media (min-width: 481px) and (max-width: 1023px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
   header h1 { font-size: 1.5rem; }
 }
-
 @media (min-width: 1024px) {
   .cards { grid-template-columns: repeat(3, 1fr); }
   header h1 { font-size: 2rem; }

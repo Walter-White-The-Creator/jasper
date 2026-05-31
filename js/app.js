@@ -1,65 +1,63 @@
 // ============================================
 // Super Mario - app.js
-// Auteur: Jasper - 5AD
-// Bevat de logica voor de game-pagina.
+// Klik op een blok -> munt verschijnt en valt weer weg.
+// Je kan oneindig vaak klikken.
 // ============================================
-
 "use strict";
 
-// Datastructuur: object met instellingen per moeilijkheidsgraad
-const moeilijkheidInstellingen = {
-  easy:   { levens: 5, snelheid: "traag",   vijanden: 3 },
-  medium: { levens: 3, snelheid: "normaal", vijanden: 6 },
-  hard:   { levens: 1, snelheid: "snel",    vijanden: 10 }
-};
+const blokInfo = [
+  { naam: "Blok 1", punten: 1 },
+  { naam: "Blok 2", punten: 1 },
+  { naam: "Blok 3", punten: 1 }
+];
 
-// Datastructuur: array met mogelijke power-ups
-const powerUps = ["Super Mushroom", "Fire Flower", "Star", "1-Up"];
+let score = 0;
 
-// Functie: kies willekeurig element uit een array
-function kiesWillekeurig(lijst) {
-  const index = Math.floor(Math.random() * lijst.length);
-  return lijst[index];
+function spawnMunt(blokEl) {
+  const stage = document.querySelector(".block-stage");
+  if (!stage) return;
+
+  const stageRect = stage.getBoundingClientRect();
+  const blokRect = blokEl.getBoundingClientRect();
+  const x = blokRect.left - stageRect.left + blokRect.width / 2;
+  const y = blokRect.top - stageRect.top;
+
+  const munt = document.createElement("img");
+  munt.src = "../media/coin.png";
+  munt.alt = "munt";
+  munt.className = "coin";
+  munt.style.left = x + "px";
+  munt.style.top = y + "px";
+
+  stage.appendChild(munt);
+
+  munt.addEventListener("animationend", function () {
+    munt.remove();
+  });
 }
 
-// Functie: bouw het bericht op basis van invoer
-function bouwBericht(naam, personage, niveau, cheats) {
-  if (naam.trim() === "") {
-    return "Geef eerst een geldige naam in!";
-  }
-
-  const instellingen = moeilijkheidInstellingen[niveau];
-  const powerUp = kiesWillekeurig(powerUps);
-
-  let bericht = "Welkom, " + naam + "! Je speelt als " + personage + ".\n";
-  bericht += "Moeilijkheid: " + niveau + " (" + instellingen.levens + " levens, ";
-  bericht += instellingen.vijanden + " vijanden, snelheid: " + instellingen.snelheid + ").\n";
-  bericht += "Je start met een power-up: " + powerUp + ".";
-
-  if (cheats) {
-    bericht += "\nCheats actief: oneindig levens ingeschakeld!";
-  }
-
-  return bericht;
+function bounceBlok(blokEl) {
+  blokEl.classList.remove("bounce");
+  void blokEl.offsetWidth;
+  blokEl.classList.add("bounce");
 }
 
-// Functie: start het spel wanneer er op de knop wordt gedrukt
-function startSpel() {
-  const naam = document.getElementById("naam").value;
-  const personage = document.getElementById("personage").value;
-  const niveau = document.getElementById("moeilijkheid").value;
-  const cheats = document.getElementById("cheats").checked;
+function blokGeklikt(event) {
+  const knop = event.currentTarget;
+  const index = Number(knop.dataset.index);
+  const info = blokInfo[index];
 
-  const output = document.getElementById("output");
-  const bericht = bouwBericht(naam, personage, niveau, cheats);
+  score += info.punten;
+  const scoreEl = document.getElementById("score");
+  if (scoreEl) scoreEl.textContent = String(score);
 
-  output.textContent = bericht;
+  spawnMunt(knop);
+  bounceBlok(knop);
 }
 
-// Koppel de knop aan de startSpel-functie wanneer de pagina geladen is
 document.addEventListener("DOMContentLoaded", function () {
-  const knop = document.getElementById("startBtn");
-  if (knop) {
-    knop.addEventListener("click", startSpel);
-  }
+  const knoppen = document.querySelectorAll(".block-btn");
+  knoppen.forEach(function (knop) {
+    knop.addEventListener("click", blokGeklikt);
+  });
 });
