@@ -1,53 +1,65 @@
-// Datastructuur: object met score en lijst van verzamelde blokken
-const spel = {
-  score: 0,
-  verzameld: []
+// ============================================
+// Super Mario - app.js
+// Auteur: Jasper - 5AD
+// Bevat de logica voor de game-pagina.
+// ============================================
+
+"use strict";
+
+// Datastructuur: object met instellingen per moeilijkheidsgraad
+const moeilijkheidInstellingen = {
+  easy:   { levens: 5, snelheid: "traag",   vijanden: 3 },
+  medium: { levens: 3, snelheid: "normaal", vijanden: 6 },
+  hard:   { levens: 1, snelheid: "snel",    vijanden: 10 }
 };
 
-// Functie: munt tonen bij klik op vraagtekenblok
-function toonCoin(knop, blokId) {
-  const coin = knop.parentElement.querySelector('.coin');
+// Datastructuur: array met mogelijke power-ups
+const powerUps = ["Super Mushroom", "Fire Flower", "Star", "1-Up"];
 
-  // Controlestructuur: blok al gebruikt?
-  if (spel.verzameld.includes(blokId)) {
-    return;
+// Functie: kies willekeurig element uit een array
+function kiesWillekeurig(lijst) {
+  const index = Math.floor(Math.random() * lijst.length);
+  return lijst[index];
+}
+
+// Functie: bouw het bericht op basis van invoer
+function bouwBericht(naam, personage, niveau, cheats) {
+  if (naam.trim() === "") {
+    return "Geef eerst een geldige naam in!";
   }
 
-  coin.classList.remove('spring');
-  void coin.offsetWidth;
-  coin.classList.add('spring');
+  const instellingen = moeilijkheidInstellingen[niveau];
+  const powerUp = kiesWillekeurig(powerUps);
 
-  knop.disabled = true;
-  spel.verzameld.push(blokId);
-  spel.score++;
-  document.getElementById('score').textContent = 'Coins: ' + spel.score;
-}
+  let bericht = "Welkom, " + naam + "! Je speelt als " + personage + ".\n";
+  bericht += "Moeilijkheid: " + niveau + " (" + instellingen.levens + " levens, ";
+  bericht += instellingen.vijanden + " vijanden, snelheid: " + instellingen.snelheid + ").\n";
+  bericht += "Je start met een power-up: " + powerUp + ".";
 
-// Functie: spel resetten via resetknop
-function resetSpel() {
-  spel.score = 0;
-  spel.verzameld = [];
-
-  document.getElementById('score').textContent = 'Coins: 0';
-  document.querySelectorAll('.knop').forEach(function (knop) {
-    knop.disabled = false;
-  });
-  document.querySelectorAll('.coin').forEach(function (coin) {
-    coin.classList.remove('spring');
-  });
-}
-
-// Functie: formulier verwerken (spelersnaam tonen)
-function startSpel(event) {
-  event.preventDefault();
-
-  const naam = document.getElementById('spelersnaam').value.trim();
-  const welkom = document.getElementById('welkom-tekst');
-
-  // Controlestructuur: naam ingevuld?
-  if (naam.length > 0) {
-    welkom.textContent = 'Welkom, ' + naam + '! Klik op de vraagtekenblokken.';
-  } else {
-    welkom.textContent = 'Klik op de vraagtekenblokken om munten te verzamelen.';
+  if (cheats) {
+    bericht += "\nCheats actief: oneindig levens ingeschakeld!";
   }
+
+  return bericht;
 }
+
+// Functie: start het spel wanneer er op de knop wordt gedrukt
+function startSpel() {
+  const naam = document.getElementById("naam").value;
+  const personage = document.getElementById("personage").value;
+  const niveau = document.getElementById("moeilijkheid").value;
+  const cheats = document.getElementById("cheats").checked;
+
+  const output = document.getElementById("output");
+  const bericht = bouwBericht(naam, personage, niveau, cheats);
+
+  output.textContent = bericht;
+}
+
+// Koppel de knop aan de startSpel-functie wanneer de pagina geladen is
+document.addEventListener("DOMContentLoaded", function () {
+  const knop = document.getElementById("startBtn");
+  if (knop) {
+    knop.addEventListener("click", startSpel);
+  }
+});

@@ -1,249 +1,193 @@
-/* Reset en basis */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ============================================
+   Super Mario website - hoofdstylesheet
+   Auteur: Jasper - 5AD
+   ============================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #5c94fc;
+  color: #1a1a1a;
+  line-height: 1.5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #5c94fc url('../media/achtergrond.png') center / cover no-repeat fixed;
+  
 }
 
-/* Header met logo en titel */
+
 header {
   background: #e52521;
-  padding: 14px 24px;
+  color: #fff;
+  padding: 16px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  box-shadow: 0 4px 0 #8b0000;
+  gap: 16px;
+  border-bottom: 4px solid #1a1a1a;
 }
 
 .logo {
-  width: 48px;
-  height: 48px;
-  background: url('../media/logo.png') center / cover;
-  border: 2px solid #000;
-  border-radius: 4px;
-  box-shadow: 3px 3px 0 #000;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
 }
 
-h1 {
-  font-size: 1.8rem;
-  text-shadow: 3px 3px 0 #000;
+header h1 {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
 }
 
-/* Navigatie */
 nav {
-  background: #c84b0c;
-  padding: 0 24px;
+  background: #fbd000;
   display: flex;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 4px solid #1a1a1a;
 }
 
 nav a {
-  color: #fff;
   text-decoration: none;
-  padding: 12px 20px;
+  color: #1a1a1a;
   font-weight: bold;
-  border-bottom: 4px solid transparent;
+  padding: 8px 14px;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 6px;
 }
 
-nav a:hover, nav a.actief {
-  background: rgba(255,255,255,0.15);
-  border-bottom-color: #f7c948;
-}
+nav a:hover { background: #e52521; color: #fff; }
 
-/* Hoofdinhoud */
 main {
   flex: 1;
-  padding: 40px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
+  padding: 24px 16px;
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-h2 {
-  font-size: 1.6rem;
-  text-shadow: 2px 2px 0 #000;
-  background: rgba(0,0,0,0.45);
-  padding: 10px 20px;
-  border-radius: 8px;
+main h2 { margin-bottom: 12px; color: #fff; text-shadow: 2px 2px 0 #000; }
+main p { background: #fff; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
+
+.hero-img {
+  display: block;
+  max-width: 220px;
+  margin: 16px auto;
 }
 
-.welkom-foto {
-  width: 120px;
-  border: 3px solid #000;
-  border-radius: 6px;
-  box-shadow: 4px 4px 0 #000;
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  margin-top: 16px;
 }
 
-.knop-link, .knop-actie {
-  background: #f7c948;
-  color: #000;
-  border: 3px solid #000;
-  border-radius: 6px;
-  padding: 12px 28px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 4px 4px 0 #000;
-}
-
-.knop-link:hover, .knop-actie:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000;
-}
-
-/* Spelinstellingen (5 interactieve elementen) */
-.spel-opties {
-  background: rgba(0,0,0,0.5);
-  border: 2px solid #000;
-  border-radius: 8px;
+.cards article {
+  background: #fff;
   padding: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  max-width: 960px;
-  width: 100%;
+  border: 3px solid #1a1a1a;
+  border-radius: 10px;
 }
 
-.spel-opties label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
+.game-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid #1a1a1a;
+  display: grid;
+  gap: 10px;
+  max-width: 480px;
 }
 
-.spel-opties input, .spel-opties select {
-  padding: 6px 10px;
-  border: 2px solid #000;
-  border-radius: 4px;
+.game-form label { font-weight: bold; }
+.game-form input[type="text"],
+.game-form select {
+  padding: 8px;
+  border: 2px solid #1a1a1a;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
-/* Spelveld met achtergrond en knoppen op vraagtekenblokken */
-.level {
-  position: relative;
-  width: 100%;
-  max-width: 960px;
-  aspect-ratio: 16 / 9;
-  background: url('../media/level.png') center / 100% 100% no-repeat;
-  border: 3px solid #000;
-  border-radius: 8px;
-  box-shadow: 4px 4px 0 #000;
-}
+.game-form .check { display: flex; align-items: center; gap: 8px; font-weight: normal; }
 
-.blok {
-  position: absolute;
-  width: 5.5%;
-  height: 9.8%;
-  transform: translate(-50%, -50%);
-}
-
-/* Posities van de 4 vraagtekenblokken op de achtergrond */
-.blok-1 { left: 61.7%; top: 43.5%; }
-.blok-2 { left: 80.5%; top: 43.5%; }
-.blok-3 { left: 88.0%; top: 43.5%; }
-.blok-4 { left: 84.1%; top: 22.2%; }
-
-.coin {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  width: 140%;
-  transform: translateX(-50%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.coin.spring {
-  animation: muntje 0.7s ease forwards;
-}
-
-@keyframes muntje {
-  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
-  50%  { opacity: 1; transform: translateX(-50%) translateY(-70px) scale(1.2); }
-  100% { opacity: 1; transform: translateX(-50%) translateY(-35px); }
-}
-
-.knop {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
+#startBtn {
+  background: #43b047;
+  color: #fff;
+  border: 2px solid #1a1a1a;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 2px;
-}
-
-.knop:hover:not(:disabled) {
-  outline: 2px solid rgba(247,201,72,0.8);
-}
-
-.knop:disabled {
-  cursor: default;
-}
-
-#score {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  background: rgba(0,0,0,0.6);
-  padding: 6px 14px;
-  border-radius: 6px;
   font-weight: bold;
-  font-size: 1.1rem;
-  text-shadow: 2px 2px 0 #000;
 }
 
-#welkom-tekst {
-  background: rgba(0,0,0,0.45);
-  padding: 8px 16px;
-  border-radius: 6px;
+#startBtn:hover { background: #2e7d32; }
+
+.output {
+  margin-top: 20px;
+  background: #fff;
+  padding: 16px;
+  border: 3px dashed #1a1a1a;
+  border-radius: 10px;
+  min-height: 60px;
 }
 
-/* 404 pagina */
-.fout {
-  font-size: 6rem;
-  font-weight: bold;
-  text-shadow: 6px 6px 0 #000;
-  color: #f7c948;
-}
-
-/* Footer met schooltabel */
-footer {
-  background: #1a1a2e;
-  padding: 16px 24px;
+.error {
   text-align: center;
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  margin-top: 32px;
 }
 
-footer table { margin: 0 auto; border-collapse: collapse; }
-footer th, footer td { padding: 4px 14px; text-align: left; font-size: 0.9rem; }
-footer th { color: #f7c948; }
+.error h2 { color: #e52521; margin-bottom: 12px; }
 
-/* Responsive: mobiel */
+footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+footer table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+footer caption {
+  caption-side: top;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px;
+}
+
+footer th, footer td {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+footer th { background: #fbd000; }
+
+/* Responsive design */
 @media (max-width: 480px) {
-  h1 { font-size: 1.3rem; }
-  h2 { font-size: 1.2rem; }
-  main { padding: 24px 12px; }
-  nav a { padding: 10px 12px; font-size: 0.85rem; }
-  .fout { font-size: 4rem; }
-  .spel-opties { flex-direction: column; align-items: stretch; }
+  header { flex-direction: column; text-align: center; }
+  header h1 { font-size: 1.2rem; }
+  nav { justify-content: center; }
+  .cards { grid-template-columns: 1fr; }
 }
 
-/* Responsive: tablet */
-@media (max-width: 768px) {
-  .level { max-width: 100%; }
-  h1 { font-size: 1.5rem; }
+@media (min-width: 481px) and (max-width: 1023px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  header h1 { font-size: 1.5rem; }
 }
 
-/* Responsive: desktop */
 @media (min-width: 1024px) {
-  main { padding: 50px 40px; }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.8rem; }
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  header h1 { font-size: 2rem; }
 }
