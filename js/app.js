@@ -1,25 +1,51 @@
+// ============================================
+// Super Mario - app.js
+// Klik op een blok -> munt verschijnt en valt weer weg.
+// ============================================
 "use strict";
 
-let score = 0;
-const scoreVak = document.getElementById("score");
-const knoppen = document.querySelectorAll(".block-btn");
+const blokInfo = [
+  { naam: "Blok 1", punten: 1 },
+  { naam: "Blok 2", punten: 1 },
+  { naam: "Blok 3", punten: 1 },
+  { naam: "Blok 4", punten: 1 }
+];
 
-function spawnMunt(event) {
-  score++;
-  scoreVak.textContent = score;
+let score = 0; // Houd de score bij
 
-  const rect = event.currentTarget.getBoundingClientRect();
+function spawnMunt(blokEl) {
+  const stage = document.querySelector(".block-stage");
+  if (!stage) return;
+
+  const stageRect = stage.getBoundingClientRect();
+  const blokRect = blokEl.getBoundingClientRect();
+  
+  // Bereken midden boven het blok
+  const x = blokRect.left - stageRect.left + blokRect.width / 2;
+  const y = blokRect.top - stageRect.top;
+
   const munt = document.createElement("img");
-  munt.src = "../media/coin.gif";
+  munt.src = "../media/coin.gif"; // Gebruik de juiste gif
+  munt.alt = "munt";
   munt.className = "coin";
-  
-  // Plaats munt in het midden boven de blok
-  munt.style.left = (rect.left + rect.width / 2 - 25) + "px";
-  munt.style.top = (rect.top - 60) + "px";
-  
-  document.body.appendChild(munt);
+  munt.style.left = x + "px";
+  munt.style.top = y + "px";
 
-  setTimeout(() => munt.remove(), 600);
+  stage.appendChild(munt);
+
+  // Verwijder munt na animatie
+  munt.addEventListener("animationend", function () {
+    munt.remove();
+  });
 }
 
-knoppen.forEach(knop => knop.addEventListener("click", spawnMunt));
+function blokGeklikt(event) {
+  score++;
+  document.getElementById("score").textContent = score;
+  spawnMunt(event.currentTarget);
+}
+
+// Voeg event listeners toe aan alle blokken
+document.querySelectorAll(".block-btn").forEach(knop => {
+  knop.addEventListener("click", blokGeklikt);
+});

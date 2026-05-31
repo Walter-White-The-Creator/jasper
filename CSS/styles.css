@@ -1,26 +1,48 @@
+/* ============================================
+   Super Mario website - hoofdstylesheet
+   ============================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #5c94fc url("../media/achtergrond.png") center/cover fixed;
   color: #1a1a1a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.algemene-achtergrond {
-  background: url("../media/achtergrond.png") center/cover fixed;
+header {
+  background: #e52521;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 4px solid #1a1a1a;
 }
-
-header { background: #e52521; color: #fff; padding: 16px; display: flex; align-items: center; gap: 16px; border-bottom: 4px solid #1a1a1a; }
 .logo { width: 64px; height: 64px; object-fit: contain; }
 
-nav { background: #fbd000; padding: 12px 16px; border-bottom: 4px solid #1a1a1a; }
-nav a { text-decoration: none; color: #1a1a1a; font-weight: bold; padding: 8px 14px; background: #fff; border: 2px solid #1a1a1a; border-radius: 6px; }
+nav {
+  background: #fbd000;
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 4px solid #1a1a1a;
+}
+nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 8px 14px;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 6px;
+}
 
 main { flex: 1; padding: 24px; max-width: 1024px; margin: 0 auto; width: 100%; }
 
-.block-stage { display: flex; gap: 20px; justify-content: center; margin-top: 50px; }
+.block-stage { display: flex; gap: 20px; justify-content: center; margin-top: 50px; position: relative; }
 
 .block-btn {
   width: 100px; 
@@ -30,10 +52,15 @@ main { flex: 1; padding: 24px; max-width: 1024px; margin: 0 auto; width: 100%; }
   cursor: pointer;
 }
 
-.coin { position: absolute; width: 50px; pointer-events: none; }
+.coin { 
+  position: absolute; 
+  width: 50px; 
+  pointer-events: none; 
+  animation: omhoog 0.6s forwards;
+}
 
 @keyframes omhoog {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-80px); opacity: 0; }
+  0% { transform: translate(-50%, 0) scale(0.6); opacity: 0; }
+  20% { transform: translate(-50%, -80px) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -100px) scale(0.8); opacity: 0; }
 }
-.coin { animation: omhoog 0.6s forwards; }
