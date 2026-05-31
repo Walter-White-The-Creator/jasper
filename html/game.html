@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Mario - Spel</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo"></div>
+    <h1>Super Mario</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="game.html" class="actief">Spel</a>
+  </nav>
+
+  <main>
+    <h2>Verzamel de munten!</h2>
+    <p id="welkom-tekst">Klik op de vraagtekenblokken om munten te verzamelen.</p>
+
+    <form class="spel-opties" id="spel-form" onsubmit="startSpel(event)">
+      <label>Naam: <input type="text" id="spelersnaam" placeholder="Jouw naam"></label>
+      <label>Moeilijkheid:
+        <select id="moeilijkheid">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="geluid"> Geluid aan</label>
+      <button type="submit" class="knop-actie">Bevestigen</button>
+      <button type="button" class="knop-actie" onclick="resetSpel()">Reset</button>
+    </form>
+
+    <div class="level">
+      <p id="score">Coins: 0</p>
+
+      <div class="blok blok-1">
+        <img class="coin" src="../media/coin.gif" alt="munt">
+        <button class="knop" onclick="toonCoin(this, 1)"></button>
+      </div>
+
+      <div class="blok blok-2">
+        <img class="coin" src="../media/coin.gif" alt="munt">
+        <button class="knop" onclick="toonCoin(this, 2)"></button>
+      </div>
+
+      <div class="blok blok-3">
+        <img class="coin" src="../media/coin.gif" alt="munt">
+        <button class="knop" onclick="toonCoin(this, 3)"></button>
+      </div>
+
+      <div class="blok blok-4">
+        <img class="coin" src="../media/coin.gif" alt="munt">
+        <button class="knop" onclick="toonCoin(this, 4)"></button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <table>
+      <tr><th>School</th><td>GO! Atheneum</td></tr>
+      <tr><th>Adres</th><td>Schoolstraat 1, 1000 Brussel</td></tr>
+    </table>
+  </footer>
+
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

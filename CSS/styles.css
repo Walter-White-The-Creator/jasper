@@ -1,0 +1,249 @@
+/* Reset en basis */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #5c94fc url('../media/achtergrond.png') center / cover no-repeat fixed;
+}
+
+/* Header met logo en titel */
+header {
+  background: #e52521;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 0 #8b0000;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  background: url('../media/logo.png') center / cover;
+  border: 2px solid #000;
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 #000;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-shadow: 3px 3px 0 #000;
+}
+
+/* Navigatie */
+nav {
+  background: #c84b0c;
+  padding: 0 24px;
+  display: flex;
+  gap: 4px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-bottom: 4px solid transparent;
+}
+
+nav a:hover, nav a.actief {
+  background: rgba(255,255,255,0.15);
+  border-bottom-color: #f7c948;
+}
+
+/* Hoofdinhoud */
+main {
+  flex: 1;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 0 #000;
+  background: rgba(0,0,0,0.45);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.welkom-foto {
+  width: 120px;
+  border: 3px solid #000;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.knop-link, .knop-actie {
+  background: #f7c948;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.knop-link:hover, .knop-actie:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* Spelinstellingen (5 interactieve elementen) */
+.spel-opties {
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 960px;
+  width: 100%;
+}
+
+.spel-opties label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.spel-opties input, .spel-opties select {
+  padding: 6px 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+/* Spelveld met achtergrond en knoppen op vraagtekenblokken */
+.level {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  background: url('../media/level.png') center / 100% 100% no-repeat;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.blok {
+  position: absolute;
+  width: 5.5%;
+  height: 9.8%;
+  transform: translate(-50%, -50%);
+}
+
+/* Posities van de 4 vraagtekenblokken op de achtergrond */
+.blok-1 { left: 61.7%; top: 43.5%; }
+.blok-2 { left: 80.5%; top: 43.5%; }
+.blok-3 { left: 88.0%; top: 43.5%; }
+.blok-4 { left: 84.1%; top: 22.2%; }
+
+.coin {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 140%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.coin.spring {
+  animation: muntje 0.7s ease forwards;
+}
+
+@keyframes muntje {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50%  { opacity: 1; transform: translateX(-50%) translateY(-70px) scale(1.2); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(-35px); }
+}
+
+.knop {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.knop:hover:not(:disabled) {
+  outline: 2px solid rgba(247,201,72,0.8);
+}
+
+.knop:disabled {
+  cursor: default;
+}
+
+#score {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+#welkom-tekst {
+  background: rgba(0,0,0,0.45);
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+/* 404 pagina */
+.fout {
+  font-size: 6rem;
+  font-weight: bold;
+  text-shadow: 6px 6px 0 #000;
+  color: #f7c948;
+}
+
+/* Footer met schooltabel */
+footer {
+  background: #1a1a2e;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+footer table { margin: 0 auto; border-collapse: collapse; }
+footer th, footer td { padding: 4px 14px; text-align: left; font-size: 0.9rem; }
+footer th { color: #f7c948; }
+
+/* Responsive: mobiel */
+@media (max-width: 480px) {
+  h1 { font-size: 1.3rem; }
+  h2 { font-size: 1.2rem; }
+  main { padding: 24px 12px; }
+  nav a { padding: 10px 12px; font-size: 0.85rem; }
+  .fout { font-size: 4rem; }
+  .spel-opties { flex-direction: column; align-items: stretch; }
+}
+
+/* Responsive: tablet */
+@media (max-width: 768px) {
+  .level { max-width: 100%; }
+  h1 { font-size: 1.5rem; }
+}
+
+/* Responsive: desktop */
+@media (min-width: 1024px) {
+  main { padding: 50px 40px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.8rem; }
+}
