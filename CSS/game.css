@@ -42,21 +42,17 @@ html, body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 12px;
-    width: 140px;
-    height: 44px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    border-radius: 16px;
     border: 1px solid #d32f2f;
-    background-color: url('../media/logo.png') center / cover no-repeat;
-    color: url('../media/logo.png') center / cover no-repeat;
+    background: url('../media/logo.png') center / cover no-repeat;
+    color: transparent;
+    text-indent: -9999px;
     cursor: pointer;
-    text-transform: uppercase;
     outline: none;
     user-select: none;
-    text-shadow: none;
     transition: 150ms all ease-in-out;
 }
 
