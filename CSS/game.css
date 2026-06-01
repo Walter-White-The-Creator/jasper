@@ -26,37 +26,40 @@ html, body {
     gap: 16px;
     padding: 24px;
     width: min(380px, 90%);
-    margin: 0 auto;
-    background-color: transparent;
-    border: 2px solid transparent;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.12);
     border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 #score {
     font-size: 20px;
     margin-bottom: 12px;
+    color: white;
 }
 
 #clicker {
-    margin-top: 12px;
-}
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 20px;
-    width: min(360px, 90%);
-    margin: 50px auto;
-}
-
-#clicker {
-    padding: 10px 18px;
-    font-size: 16px;
-    border: 1px solid #000;
-    background-color: transparent;
+    padding: 0 12px;
+    width: 140px;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    border: 1px solid #d32f2f;
+    background: #d32f2f;
+    color: white;
     cursor: pointer;
+    text-transform: uppercase;
+    transition: 150ms all ease-in-out;
+}
+
+#clicker:active {
+    transform: translateY(3px);
+}
+
+#clicker:hover {
+    filter: brightness(0.95);
 }
 
 .button-with-icon {
