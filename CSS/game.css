@@ -50,8 +50,8 @@ html, body {
     letter-spacing: 1px;
     border-radius: 8px;
     border: 1px solid #d32f2f;
-    background: #d32f2f;
-    color: white;
+    background-color: url('../media/logo.png') center / cover no-repeat;
+    color: transparent;
     cursor: pointer;
     text-transform: uppercase;
     outline: none;
