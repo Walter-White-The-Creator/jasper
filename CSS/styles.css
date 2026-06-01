@@ -32,7 +32,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #0f988e;
+  border: 1px solid #ff0000;
   font-family: "Istok Web", sans-serif;
   letter-spacing: 1px;
   padding: 0 12px;
@@ -75,9 +75,9 @@ body {
     inset 0 16px 2px -15px rgba(0, 0, 0, 0),
     inset 0 0 0 1px rgba(255, 255, 255, 0.15),
     inset 0 1px 20px rgba(0, 0, 0, 0.1),
-    0 0 0 #00ff26,
+    0 0 0 #ff0000,
     0 0 0 2px rgba(255, 255, 255, 0.5),
-    0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(255, 0, 0, 0),
     0 0 0 rgba(0, 0, 0, 0);
 }
 
