@@ -2,7 +2,7 @@
 
 body {
   font-family: "Trebuchet MS", Arial, sans-serif;
-  background: #ff0000;
+  background: #ff0000 url('../media/super-mario-fr-1920x1201.jpg') center top / cover no-repeat;
   color: #1a1a1a;
   min-height: 100vh;
   display: flex;
@@ -11,13 +11,21 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
-  margin: 8px auto 8px;
-  padding: 8px 12px;
-  background: #ff0000;
+  font-size: 1.8rem;
+  margin: 10px auto 4px;
+  padding: 6px 12px;
+  background: rgba(255, 0, 0, 0.7);
   color: #ffffff;
   display: inline-block;
   border-radius: 8px;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0 auto 12px;
+  text-align: center;
+  color: #ffffff;
+  max-width: 560px;
 }
 
 /* Index page styles */
@@ -35,7 +43,7 @@ h1 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: url('../media/super-mario-fr-1920x1201.jpg') center bottom / cover no-repeat;
+  background: none;
 }
 
 .button-with-icon {
