@@ -14,7 +14,8 @@ h1 {
   font-size: 1.8rem;
   margin: 8px auto 4px;
   padding: 6px 14px;
-  background color: transparent;
+  background-color: transparent;
+  position: absolute;
   display: inline-block;
   border-radius: 8px;
   line-height: 1.1;
