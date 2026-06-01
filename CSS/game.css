@@ -51,7 +51,7 @@ html, body {
     border-radius: 8px;
     border: 1px solid #d32f2f;
     background-color: url('../media/logo.png') center / cover no-repeat;
-    color: transparent;
+    color: url('../media/logo.png') center / cover no-repeat;
     cursor: pointer;
     text-transform: uppercase;
     outline: none;
