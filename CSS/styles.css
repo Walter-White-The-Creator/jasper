@@ -9,126 +9,131 @@ body {
   flex-direction: column;
 }
 
-header {
-  background: #e52521;
-  color: #fff;
-  padding: 16px;
+/* Index page styles */
+.button-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.center-area {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 16px;
-  border-bottom: 4px solid #000;
-}
-.logo { width: 64px; height: 64px; object-fit: contain; }
-header h1 { font-size: 1.6rem; }
-
-nav {
-  background: #fbd000;
-  display: flex;
-  gap: 8px;
-  padding: 12px 16px;
-  border-bottom: 4px solid #000;
-}
-nav a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: bold;
-  padding: 8px 14px;
-  background: #fff;
-  border: 2px solid #000;
-  border-radius: 6px;
-}
-nav a:hover { background: #e52521; color: #fff; }
-
-.game-main {
-  flex: 1;
-  min-height: 480px;
-  background: url('../media/achtergrond.png') center bottom / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 80px;
-  gap: 20px;
-}
-
-.game-main > p {
-  background: rgba(0,0,0,0.6);
-  color: #f7c948;
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 6px 20px;
-  border-radius: 8px;
-}
-
-.block-stage {
-  display: flex;
-  gap: 0;
-  position: relative;
-}
-
-.block-btn {
-  width: 80px;
-  height: 80px;
-  background-image: url('../media/logo.png');
-  background-size: cover;
-  background-position: center;
-  border: 3px solid #000;
-  border-right: none;
-  cursor: pointer;
-  padding: 0;
-  image-rendering: pixelated;
-}
-.block-btn:last-child { border-right: 3px solid #000; }
-.block-btn:hover { filter: brightness(1.2); }
-
-
-.coin {
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  margin-left: -24px; /* horizontaal centreren zonder transform */
-  pointer-events: none;
-  image-rendering: pixelated;
-  animation: muntPop 0.9s ease-out forwards;
-}
-
-@keyframes muntPop {
-  0%   { transform: translateY(0);    opacity: 1; }
-  40%  { transform: translateY(-80px); opacity: 1; }
-  75%  { transform: translateY(-90px); opacity: 1; }
-  100% { transform: translateY(-20px); opacity: 0; }
-}
-
-main:not(.game-main) {
-  flex: 1;
-  padding: 24px 16px;
-  max-width: 1024px;
-  margin: 0 auto;
+  justify-content: center;
   width: 100%;
+  background: url('../media/super-mario-fr-1920x1201.jpg') center bottom / cover no-repeat;
 }
-main:not(.game-main) h2 { margin-bottom: 12px; color: #fff; text-shadow: 2px 2px 0 #000; }
-main:not(.game-main) p  { background: #fff; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-.hero-img { display: block; max-width: 220px; margin: 16px auto; }
 
-.cards { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 16px; }
-.cards article { background: #fff; padding: 16px; border: 3px solid #000; border-radius: 10px; }
-
-.error { text-align: center; background: #fff; padding: 32px; border-radius: 12px; margin-top: 32px; }
-.error h2 { color: #e52521; margin-bottom: 12px; }
-
-footer { background: #1a1a1a; color: #fff; padding: 16px; margin-top: auto; }
-footer table { margin: 0 auto; border-collapse: collapse; background: #fff; color: #1a1a1a; }
-footer th, footer td { padding: 8px 14px; border: 1px solid #ccc; text-align: left; }
-footer th { background: #fbd000; }
-
-@media (max-width: 480px) {
-  header { flex-direction: column; text-align: center; }
-  .block-btn { width: 60px; height: 60px; }
+.button-with-icon {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #0f988e;
+  font-family: "Istok Web", sans-serif;
+  letter-spacing: 1px;
+  padding: 0 12px;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-radius: 3px;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  transform: translateY(0px);
+  position: relative;
+  box-shadow:
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 3px 0 #0f9838,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #00ff1a;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  transition: 150ms all ease-in-out;
 }
-@media (min-width: 481px) and (max-width: 1023px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
+
+.button-with-icon .icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s ease-in-out;
 }
-@media (min-width: 1024px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
-  header h1 { font-size: 2rem; }
+
+.button-with-icon:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 1px 20px rgba(0, 0, 0, 0.1),
+    0 0 0 #00ff26,
+    0 0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button-with-icon:hover .text {
+  transform: translateX(80px);
+}
+
+.button-with-icon:hover .icon {
+  transform: translate(23px);
+}
+
+.text {
+  transition: all 0.5s ease-in-out;
+}
+
+.yoshi {
+  background: #d32f2f;
+  border-color: #b71c1c;
+}
+
+.luigi {
+  background: #43a047;
+  border-color: #2e7d32;
+}
+
+/* Game page styles */
+.card {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#score {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#clicker {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#clicker:hover {
+  background: #b71c1c;
+}
+
+#clicker:active {
+  transform: scale(0.95);
 }

@@ -1,45 +1,62 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl-BE">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Super Mario - Home</title>
-  <link rel="stylesheet" href="../jasper/css/styles.css">
-    <style>
-        body {
-            background-image: url('../jasper/media/achtergrond.png'); /* Achtergrondafbeelding */
-            background-repeat: no-repeat; /* Voorkomt herhaling */
-            background-size: cover; /* Zorgt dat de afbeelding het hele scherm vult */
-            background-position: center; /* Centreert de afbeelding */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoshi Website</title>
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
-<body class="algemene-achtergrond">
-
-  <header>
-    <img src="../jasper/media/logo.png" alt="Super Mario logo" class="logo">
-    <h1>Super Mario Wereld</h1>
-  </header>
-
-  <nav>
-    <a href="../jasper/index.html">Home</a>
-    <a href="../jasper/html/game.html">Spel</a>
-  </nav>
-
-  <main>
-    <section class="cards">
-      <article><h3>Mario</h3><p>De held met de rode pet.</p></article>
-      <article><h3>Luigi</h3><p>De groene broer van Mario.</p></article>
-    </section>
-  </main>
-
-  <footer>
-    <table>
-      <caption>Onze school</caption>
-      <tr><th>Naam</th><td>School Voorbeeld</td></tr>
-      <tr><th>Straat</th><td>Schoolstraat 1</td></tr>
-      <tr><th>Land</th><td>België</td></tr>
-    </table>
-  </footer>
+<body>
+    <!-- From Uiverse.io by elijahgummer -->
+    <div class="button-row">
+      <button class="button-with-icon luigi">
+        <svg
+          class="icon"
+          id="Play"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color000000 svgShape"
+            fill="#ffffff"
+            d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+          ></path>
+        </svg>
+        <span class="text">luigie</span>
+      </button>
+      <button class="button-with-icon yoshi">
+        <svg
+          class="icon"
+          id="Play2"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color000000 svgShape"
+            fill="#ffffff"
+            d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+          ></path>
+        </svg>
+        <span class="text">yoshi</span>
+      </button>
+    </div>
+    <div class="center-area">
+      <button class="button-with-icon">
+        <svg
+          class="icon"
+          id="Play3"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color000000 svgShape"
+            fill="#ffffff"
+            d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+          ></path>
+        </svg>
+        <span class="text">Play</span>
+      </button>
+    </div>
+    <script src="js/index.js"></script>
 </body>
 </html>
