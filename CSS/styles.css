@@ -3,8 +3,6 @@
 body {
   font-family: "Trebuchet MS", Arial, sans-serif;
   background: url('../media/super-mario-fr-1920x1201.jpg') center top / cover no-repeat;
-  background-color: #ff0000;
-  background-blend-mode: multiply;
   color: #1a1a1a;
   min-height: 100vh;
   display: flex;
