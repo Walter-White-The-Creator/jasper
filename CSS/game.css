@@ -18,9 +18,27 @@ html, body {
     height: 100%;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    width: min(380px, 90%);
+    margin: 0 auto;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 18px;
+}
+
 #score {
     font-size: 20px;
     margin-bottom: 12px;
+}
+
+#clicker {
+    margin-top: 12px;
 }
 .card {
     display: flex;
@@ -34,7 +52,6 @@ html, body {
 }
 
 #clicker {
-    margin-top: 20px;
     padding: 10px 18px;
     font-size: 16px;
     border: 1px solid #000;
