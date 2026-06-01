@@ -68,6 +68,42 @@ html, body {
     filter: brightness(0.95);
 }
 
+button[onclick="toonEnVerbergGif()"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    width: 140px;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    border: 1px solid #d32f2f;
+    background: #d32f2f;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    user-select: none;
+    transition: 150ms all ease-in-out;
+}
+
+button[onclick="toonEnVerbergGif()"]:active {
+    transform: translateY(3px);
+}
+
+button[onclick="toonEnVerbergGif()"]:hover {
+    filter: brightness(0.95);
+}
+
+#tijdelijkeGif {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
 .button-with-icon {
     overflow: hidden;
     display: inline-flex;
