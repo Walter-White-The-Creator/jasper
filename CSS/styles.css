@@ -97,7 +97,7 @@ p {
 }
 
 .text {
-  position: absolute !important;
+  position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
@@ -109,13 +109,17 @@ p {
 }
 
 .yoshi {
-  background: #39ff14;
-  border-color: #00ff00;
+  background-image: url('../media/yoshi_egg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .luigi {
-  background: #43a047;
-  border-color: #2e7d32;
+  background-image: url('../media/luigi.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #score {
