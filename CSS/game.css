@@ -97,40 +97,27 @@ button[onclick="toonEnVerbergGif()"]:hover {
     filter: brightness(0.95);
 }
 
-#tijdelijkeGif {
-    width: 80px;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 12px;
-}
+
 
 .button-with-icon {
-    overflow: hidden;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid #d32f2f;
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-    letter-spacing: 1px;
-    padding: 0 12px;
-    text-align: center;
+    gap: 8px;
     width: 140px;
     height: 44px;
-    font-size: 14px;
+    padding: 0 12px;
+    font: 600 14px/1 system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 600;
+    background: #d32f2f;
+    color: #fff;
+    border: 1px solid #d32f2f;
     border-radius: 8px;
-    outline: none;
-    user-select: none;
     cursor: pointer;
-    transform: translateX(-50%);
     position: absolute;
     top: 20px;
     left: 50%;
-    background: #d32f2f;
-    color: white;
-    text-shadow: none;
-    transition: 150ms all ease-in-out;
+    transform: translateX(-50%);
+    transition: 150ms ease-in-out;
 }
 
 .button-with-icon .icon {
@@ -140,7 +127,18 @@ button[onclick="toonEnVerbergGif()"]:hover {
     transition: all 0.5s ease-in-out;
 }
 
+.button-with-icon.yoshi:active {
+    /* Yoshi active */
+    transform: translateX(-50%) translateY(3px);
+}
+
+.button-with-icon.luigi:active {
+    /* Luigi active */
+    transform: translateX(-50%) translateY(3px);
+}
+
 .button-with-icon:active {
+    /* Generic fallback active */
     transform: translateX(-50%) translateY(3px);
 }
 
@@ -159,4 +157,9 @@ button[onclick="toonEnVerbergGif()"]:hover {
 .button-with-icon.yoshi {
     background: #43a047;
     border-color: #2e7d32;
+}
+
+.button-with-icon.luigi {
+    background: #39ff14;
+    border-color: #00ff00;
 }
