@@ -1,0 +1,11 @@
+body {
+    background-image: url('../media/waarschuwing.avif');
+    background-size: cover;
+    background-position:default;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}

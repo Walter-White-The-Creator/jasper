@@ -131,6 +131,20 @@ html, body {
     background-color: transparent;
 }
 
+.close-button {
+    background-image: url('../media/bob_the_bom.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    padding: 0;
+    border-radius: 0;
+    border: 1px solid transparent;
+    background-color: transparent;  
+}
+
 .button-row {
     display: flex;
     flex-direction: row;
