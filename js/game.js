@@ -19,3 +19,12 @@ if (clickerBtn) {
     updateScoreDisplay();
   });
 }
+
+function toonEnVerbergGif() {
+  const gif = document.getElementById('tijdelijkeGif');
+  if (gif.style.display === 'none') {
+    gif.style.display = 'block';
+  } else {
+    gif.style.display = 'none';
+  }
+}
