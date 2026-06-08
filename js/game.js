@@ -1,4 +1,4 @@
-const backButton = document.querySelector('.button-with-icon');
+const backButton = document.querySelector('.button-with-icon.back');
 if (backButton) {
   backButton.addEventListener('click', () => {
     window.location.href = '../index.html';
