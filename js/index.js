@@ -5,7 +5,7 @@ if (luigiButton) {
   });
 }
 
-const playButton = document.querySelector('.center-area .button-with-icon');
+const playButton = document.querySelector('.center-area .play-button');
 if (playButton) {
   playButton.addEventListener('click', () => {
     location.href = 'html/game.html';

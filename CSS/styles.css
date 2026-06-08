@@ -12,25 +12,12 @@ body {
   justify-content: center;
 }
 
-.hero {
-  width: min(100%, 900px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 48px 20px 80px;
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-}
 
 h1 {
   font-size: clamp(2rem, 4vw, 3.2rem);
   margin: 0 0 16px;
   padding: 8px 16px;
-  color: #ffffff;
+  color: #000000;
   border-radius: 12px;
   line-height: 1.05;
 }
@@ -44,15 +31,8 @@ p {
   line-height: 1.6;
 }
 
-/* Index page styles */
-.button-row {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  margin-top: 20px;
-  justify-content: center;
-}
+
+
 
 .center-area {
   flex: 1;
@@ -63,63 +43,38 @@ p {
   background: none;
 }
 
-.button-with-icon {
-  overflow: hidden;
+.play-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  border: 1px solid #ff0000;
-  font-family: "Istok Web", sans-serif;
-  letter-spacing: 1px;
-  padding: 0 16px;
-  text-align: center;
+  overflow: hidden;
   min-width: 150px;
   height: 48px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 700;
+  padding: 0 16px;
+  border: 1px solid #ff0000;
   border-radius: 999px;
+  font: 700 15px/1 "Istok Web", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background: #ff1744;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
   outline: none;
   user-select: none;
   cursor: pointer;
-  transform: translateY(0px);
-  background: #ff1744;
-  color: white;
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
   transition: 150ms all ease-in-out;
 }
 
-.button-with-icon .icon {
+.play-button .icon {
   margin-right: 10px;
   width: 22px;
   height: 22px;
   transition: transform 0.3s ease-in-out;
 }
 
-.button-with-icon:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(255, 0, 0, 0.22);
-}
-
-.button-with-icon:active {
-  transform: translateY(3px);
-  box-shadow:
-    inset 0 16px 2px -15px rgba(0, 0, 0, 0),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-    inset 0 1px 20px rgba(0, 0, 0, 0.1),
-    0 0 0 #ff0000,
-    0 0 0 2px rgba(255, 255, 255, 0.5),
-    0 0 0 rgba(255, 0, 0, 0),
-    0 0 0 rgba(0, 0, 0, 0);
-}
-
-.button-with-icon:hover .text {
-  transform: translateX(4px);
-}
-
-.button-with-icon:hover .icon {
+.play-button:hover .icon {
   transform: translateX(4px);
 }
 
@@ -127,37 +82,8 @@ p {
   transition: all 0.5s ease-in-out;
 }
 
-.yoshi {
-  background: #39ff14;
-  border-color: #00ff00;
-}
-
-.luigi {
-  background: #43a047;
-  border-color: #2e7d32;
-}
-
 #score {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-}
-
-#clicker {
-  padding: 15px 30px;
-  font-size: 18px;
-  background: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#clicker:hover {
-  background: #b71c1c;
-}
-
-#clicker:active {
-  transform: scale(0.95);
 }

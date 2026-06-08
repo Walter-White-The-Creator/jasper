@@ -30,6 +30,7 @@ html, body {
     background-color: rgba(255, 255, 255, 0.12);
     border-radius: 18px;
     border: 2px solid rgba(255, 255, 255, 0.2);
+    /* source: https://www.w3schools.com/howto/howto_css_cards.asp */
 }
 
 #score {
@@ -60,25 +61,10 @@ html, body {
     transition: 150ms all ease-in-out;
 }
 
-#clicker:active {
-    transform: translateY(3px);
-}
-
-#clicker:hover {
-    filter: brightness(0.95);
-}
-
-button[onclick="toonEnVerbergGif()"]:active {
-    transform: translateY(3px);
-}
-
-button[onclick="toonEnVerbergGif()"]:hover {
-    filter: brightness(0.95);
-}
 
 
 
-.button-with-icon {
+.game-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +74,7 @@ button[onclick="toonEnVerbergGif()"]:hover {
     padding: 0 16px;
     font: 700 15px/1 system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     text-transform: uppercase;
-    background: #d32f2f; /* default red for back */
+    background: #d32f2f;
     color: #fff;
     border: 1px solid #b71c1c;
     border-radius: 999px;
@@ -97,60 +83,51 @@ button[onclick="toonEnVerbergGif()"]:hover {
     text-decoration: none;
 }
 
-.button-with-icon.back {
+.back-button {
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.button-with-icon .icon {
+.game-button .icon {
     width: 22px;
     height: 22px;
     transition: transform 0.3s ease-in-out;
 }
 
-.button-with-icon:active {
-    transform: translateY(3px);
-}
-
-.button-with-icon:hover {
-    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.25);
-}
-
-.button-with-icon.back:active {
-    transform: translateX(-50%) translateY(3px);
-}
-
-.button-with-icon.back:hover {
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.25);
-}
-
-.button-with-icon:hover .icon {
+.game-button:hover .icon {
     transform: translateX(4px);
 }
 
-.button-with-icon .text {
-    position: static;
-    width: auto;
-    height: auto;
+
+
+.character-button.yoshi {
+    background-image: url('../media/yoshi_egg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
     padding: 0;
-    margin: 0;
-    overflow: visible;
-    clip-path: none;
-    white-space: normal;
-    border: none;
+    border-radius: 0;
+    border: 1px transparent solid;
+    background-color: transparent;
 }
 
-.button-with-icon.yoshi {
-    background: #39ff14;
-    border-color: #00ff00;
-}
-
-.button-with-icon.luigi {
-    background: #43a047;
-    border-color: #2e7d32;
+.character-button.luigi {
+    background-image: url('../media/luigi_1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    padding: 0;
+    border-radius: 0;
+    border: 1px transparent solid;
+    background-color: transparent;
 }
 
 .button-row {
@@ -160,9 +137,4 @@ button[onclick="toonEnVerbergGif()"]:hover {
     justify-content: center;
     align-items: center;
     margin-top: 110px;
-}
-
-.button-with-icon.back {
-    background: #d32f2f;
-    border-color: #b71c1c;
 }

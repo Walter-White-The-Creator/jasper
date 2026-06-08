@@ -1,4 +1,4 @@
-const backButton = document.querySelector('.button-with-icon.back');
+const backButton = document.querySelector('.back-button');
 if (backButton) {
   backButton.addEventListener('click', () => {
     window.location.href = '../index.html';
@@ -18,13 +18,4 @@ if (clickerBtn) {
     score += 1;
     updateScoreDisplay();
   });
-}
-
-function toonEnVerbergGif() {
-  const gif = document.getElementById('tijdelijkeGif');
-  if (gif.style.display === 'none') {
-    gif.style.display = 'block';
-  } else {
-    gif.style.display = 'none';
-  }
 }
