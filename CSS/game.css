@@ -112,7 +112,7 @@ html, body {
     min-width: 90px;
     padding: 0;
     border-radius: 0;
-    border: 1px transparent solid;
+    border: 1px solid transparent;
     background-color: transparent;
 }
 
@@ -126,7 +126,7 @@ html, body {
     min-width: 90px;
     padding: 0;
     border-radius: 0;
-    border: 1px transparent solid;
+    border: 1px solid transparent;
     background-color: transparent;
 }
 
