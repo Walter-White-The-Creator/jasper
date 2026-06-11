@@ -18,7 +18,7 @@ Een browser-gebaseerd Mario spel gebouwd met HTML, CSS en JavaScript. Klik op he
 ## ✨ Functies
 
 - 🖱️ Klikspel met punten teller
-- 🎉 Melding om de 10 punten
+- 🎉 Melding om de 10 punten, 20 punten, 100 punten en 1000 punten!
 - 🥚 Yoshi knop → Yoshi pagina
 - 👨‍🔧 Luigi knop → Luigi pagina
 - 💣 Bob de Bom knop → je bent gewaarschuwd...
