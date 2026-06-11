@@ -4,7 +4,7 @@ if (luigiButton) {
     location.href = 'https://jellie12.github.io/Project-Web-Dev-2026/';
   });
 }
-
+// https://www.w3schools.com/tags/ref_eventattributes.asp
 const playButton = document.querySelector('.center-area .play-button');
 if (playButton) {
   playButton.addEventListener('click', () => {
@@ -18,3 +18,4 @@ if (yosiButton) {
     location.href = 'https://6ssl.github.io/project1-BETA/index.html';
   });
 }
+// https://www.w3schools.com/tags/ref_eventattributes.asp
